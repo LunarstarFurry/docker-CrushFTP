@@ -1,15 +1,14 @@
-[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png "CrushFTP Logo"
+[preview]: https://crushftp.com/assets/img/logo/logo.png "CrushFTP Logo"
 
 ![alt text][preview]
 
-# CrushFTP 10
+# CrushFTP 11
 
 Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or HTTPS using CrushFTP
 
 ## Docker Features
-* Base: Alpine 3.12 Linux (microblink/java)
-* CrushFTP 10
-* Size: 234.8MB
+* Base: Alpine 3.21.3 Linux (amazoncorretto:21-alpine-jdk)
+* CrushFTP 11
 
 This container is distributed under the [MIT Licence](LICENSE).
 
@@ -17,7 +16,7 @@ This container is distributed under the [MIT Licence](LICENSE).
 ## Volumes
 | Volume | Required | Function | Example |
 |----------|----------|----------|----------|
-| `/var/opt/CrushFTP10` | Yes | Persistent storage for CrushFTP config | `/your/config/path/:/var/opt/CrushFTP10`|
+| `/var/opt/CrushFTP11` | Yes | Persistent storage for CrushFTP config | `/your/config/path/:/var/opt/CrushFTP11`|
 | `/mnt/FTP/Shared` | No | Shared host folder for file sharing with users | `/your/host/path/:/mnt/FTP/Shared`|
 
 * You can add as many volumes as you want between host and the container and change their mount location within the container. You will configure individual folder access and permissions for each user in CrushFTPs User Manager. The "/mnt/FTP/Shared" in the table above is just one such example.
@@ -43,7 +42,7 @@ This container is distributed under the [MIT Licence](LICENSE).
 | `CRUSH_ADMIN_PORT`     | Port for health cecks     | `8080`       |
 
 # Installation
-Run this container and mount the containers `/var/opt/CrushFTP10` volume to the host to keep CrushFTP's configuration persistent. Open a browser and go to `http://<IP>:8080`. Note that the default username and password are both `crushadmin` unless the default environment variables are changed.
+Run this container and mount the containers `/var/opt/CrushFTP11` volume to the host to keep CrushFTP's configuration persistent. Open a browser and go to `http://<IP>:8080`. Note that the default username and password are both `crushadmin` unless the default environment variables are changed.
 
 This command will create a new container and expose all ports. Remember to change the `<volume>` to a location on your host machine.
 
@@ -52,4 +51,4 @@ docker run -p 21:21 -p 443:443 -p 2000-2100:2000-2100 -p 2222:2222 -p 8080:8080 
 ```
 
 # CrushFTP Configuration
-Visit the [CrushFTP 10 Wiki](https://www.crushftp.com/crush10wiki/)
+Visit the [CrushFTP 11 Wiki](https://www.crushftp.com/crush11wiki/)
