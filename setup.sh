@@ -2,10 +2,14 @@
 
 CRUSH_FTP_BASE_DIR="/var/opt/CrushFTP11"
 
-if [[ -f /tmp/CrushFTP11.zip ]] ; then
-    echo "Unzipping CrushFTP..."
-    unzip -o -q /tmp/CrushFTP11.zip -d /var/opt/
-    rm -f /tmp/CrushFTP11.zip
+if [[ -f "${CRUSH_FTP_BASE_DIR}/CrushFTP.jar" ]]; then
+    echo "CrushFTP already installed at ${CRUSH_FTP_BASE_DIR}. Skipping extraction."
+else
+    if [[ -f /tmp/CrushFTP11.zip ]] ; then
+        echo "Unzipping CrushFTP..."
+        unzip -o -q /tmp/CrushFTP11.zip -d /var/opt/
+        rm -f /tmp/CrushFTP11.zip
+    fi
 fi
 
 if [ -z ${CRUSH_ADMIN_USER} ]; then
