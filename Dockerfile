@@ -1,6 +1,7 @@
 FROM amazoncorretto:21-alpine-jdk
-LABEL org.opencontainers.image.authors="hello@blomo.tech"
+LABEL org.opencontainers.image.authors="Haiyo.Lunarstar.gay!"
 # forked from markusmcnugen
+# forked from blomotech again lol
 
 RUN apk upgrade --no-cache \
     && apk --no-cache add bash bash-completion bash-doc ca-certificates curl wget \
