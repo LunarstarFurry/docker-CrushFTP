@@ -1,5 +1,5 @@
 FROM amazoncorretto:21-alpine-jdk
-LABEL org.opencontainers.image.authors="Haiyo.Lunarstar.gay!"
+LABEL org.opencontainers.image.authors="Haiyo.Lunarstar!"
 # forked from markusmcnugen
 # forked from blomotech again lol
 
