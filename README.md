@@ -6,6 +6,9 @@
 
 Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or HTTPS using CrushFTP
 
+# Update
+3/20/2026
+
 ## Docker Features
 * Base: Alpine 3.25 Linux (amazoncorretto:25-alpine-jdk)
 * CrushFTP 11
