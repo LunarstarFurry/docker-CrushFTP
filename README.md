@@ -46,6 +46,8 @@ This container is distributed under the [MIT Licence](LICENSE).
 | `CRUSH_ADMIN_PASSWORD` | Password for admin user   | `crushadmin` |
 | `CRUSH_ADMIN_PROTOCOL` | Protocol for health cecks | `http`       |
 | `CRUSH_ADMIN_PORT`     | Port for health cecks     | `8080`       |
+| `PUID`                 | User ID for Process       | `0`          |
+| `PGID`                 | Group ID for Process      | `0`          |
 
 # Installation
 Run this container and mount the containers `/var/opt/CrushFTP11` volume to the host to keep CrushFTP's configuration persistent. Open a browser and go to `http://<IP>:8080`. Note that the default username and password are both `crushadmin` unless the default environment variables are changed.
