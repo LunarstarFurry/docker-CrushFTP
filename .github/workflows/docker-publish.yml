@@ -23,23 +23,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # v4 is still fine, but check for v5 soon
+        uses: actions/checkout@v4
 
       - name: Install cosign
         if: github.event_name != 'pull_request'
-        # Updated to v3.8.0 (current stable)
-        uses: sigstore/cosign-installer@dcced6c7c006093ca2d233c7f9996919
+        # Using the latest v3 tag
+        uses: sigstore/cosign-installer@v3
         with:
           cosign-release: 'v2.4.1'
 
       - name: Set up Docker Buildx
-        # Updated to v3.10.0
-        uses: docker/setup-buildx-action@b167a82f6e91f0a1c6a2fa71e0c20188
+        # v3 is the current stable major version
+        uses: docker/setup-buildx-action@v3
         
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
-        # Updated to v3.3.0
-        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: lunarstarfurry
@@ -47,15 +46,14 @@ jobs:
 
       - name: Extract Docker metadata
         id: meta
-        # Updated to v5.7.0
-        uses: docker/metadata-action@369ebfd12c9b4e7240c976f95761a668
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
         id: build-and-push
-        # Updated to v6.15.0 (Node 24 native)
-        uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001
+        # Moving to v6 solves the Node.js 20 warning
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
