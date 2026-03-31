@@ -4,8 +4,20 @@ LABEL org.opencontainers.image.authors="Haiyo.Lunarstar!"
 # forked from blomotech again lol
 
 RUN apk upgrade --no-cache \
-    && apk --no-cache add bash bash-completion bash-doc ca-certificates curl wget \
-	&& update-ca-certificates
+    && apk --no-cache add \
+        bash \
+        bash-completion \
+        bash-doc \
+        ca-certificates \
+        curl \
+        wget \
+        graphicsmagick \
+        ghostscript \
+        ffmpeg \
+        exiftool \
+        ttf-dejavu \
+        fontconfig \
+    && update-ca-certificates
 
 RUN wget -O /tmp/CrushFTP11.zip https://www.crushftp.com/early11/CrushFTP11.zip
 ADD ./setup.sh /var/opt/setup.sh
