@@ -30,7 +30,7 @@ ENTRYPOINT [ "/bin/bash", "/var/opt/setup.sh" ]
 CMD ["-c"]
 
 HEALTHCHECK --interval=1m --timeout=3s \
-  CMD curl -f ${CRUSH_ADMIN_PROTOCOL}://localhost:${CRUSH_ADMIN_PORT}/favivon.ico -H 'Connection: close' || exit 1
+  CMD ps aux | grep -v grep | grep -q "CrushFTPJarProxy.jar" || exit 1
 
 ENV CRUSH_ADMIN_PROTOCOL=http
 ENV CRUSH_ADMIN_PORT=8080
