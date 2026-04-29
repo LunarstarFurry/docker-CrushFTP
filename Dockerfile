@@ -20,7 +20,7 @@ RUN apk upgrade --no-cache \
 ENV PUID=0
 ENV PGID=0
 
-RUN busybox wget -O /tmp/CrushFTP11.zip https://www.crushftp.com/early11/CrushFTP11.zip
+RUN busybox curl -o /tmp/CrushFTP11.zip https://www.crushftp.com/early11/CrushFTP11.zip
 ADD ./setup.sh /var/opt/setup.sh
 
 RUN chmod +x /var/opt/setup.sh
