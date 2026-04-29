@@ -34,7 +34,7 @@ else
     if [[ -f /tmp/CrushFTP11.zip ]] ; then
         echo "Unzipping CrushFTP..."
         # If RUN_AS is empty, this just runs 'unzip'. If not, it runs 'su-exec crushuser unzip'
-        $RUN_AS unzip -o -q /tmp/CrushFTP11.zip -d /var/opt/
+        $RUN_AS busybox unzip -o -q /tmp/CrushFTP11.zip -d /var/opt/
         rm -f /tmp/CrushFTP11.zip
     fi
 fi
