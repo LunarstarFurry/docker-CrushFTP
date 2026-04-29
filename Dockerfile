@@ -7,15 +7,12 @@ RUN apk upgrade --no-cache \
         bash-completion \
         bash-doc \
         ca-certificates \
-        curl \
-        wget \
         graphicsmagick \
         ghostscript \
         ffmpeg \
         exiftool \
         ttf-dejavu \
         fontconfig \
-        unzip \
         su-exec \
         shadow \
     && update-ca-certificates
@@ -23,7 +20,7 @@ RUN apk upgrade --no-cache \
 ENV PUID=0
 ENV PGID=0
 
-RUN wget -O /tmp/CrushFTP11.zip https://www.crushftp.com/early11/CrushFTP11.zip
+RUN busybox wget -O /tmp/CrushFTP11.zip https://www.crushftp.com/early11/CrushFTP11.zip
 ADD ./setup.sh /var/opt/setup.sh
 
 RUN chmod +x /var/opt/setup.sh
