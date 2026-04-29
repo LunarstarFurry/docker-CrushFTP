@@ -10,6 +10,7 @@ RUN apk upgrade --no-cache \
         graphicsmagick \
         ghostscript \
         ffmpeg \
+        curl \
         exiftool \
         ttf-dejavu \
         fontconfig \
